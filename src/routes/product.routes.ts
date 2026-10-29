@@ -1,8 +1,8 @@
 import productController from "../controllers/product.controller";
 import { NextFunction, Router, Request, Response } from "express";
-import upload from "../middlerware/multer";
+import upload from "../middleware/multer";
 import multer from "multer";
-import { authenticate, authorizeRoles } from "../middlerware/auth.middleware";
+import { authenticate, authorizeRoles } from "../middleware/auth.middleware";
 
 const Productroutes = Router()
 
@@ -18,7 +18,7 @@ Productroutes.get("/trending", productController.getTrendingProducts);
 Productroutes.post("/trending", productController.postTrendingProducts);
 Productroutes.get("/category/:category", productController.getProdutByCategory);
 Productroutes.get("/search", productController.getProductBySearch);
-Productroutes.get("/:_id", productController.GetProductById);
+Productroutes.get("/:_id", productController.getProductById);
 
 // Admin-only routes
 Productroutes.post(
