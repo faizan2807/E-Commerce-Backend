@@ -2,12 +2,12 @@
   "compilerOptions": {
     "target": "ES2022",
     "module": "Node16",
-    "rootDir": ".",
+    "rootDir": "./src",
     "outDir": "./dist",
     "strict": true,
     "moduleResolution": "node16",
     "esModuleInterop": true,
     "skipLibCheck": true
   },
-  "include": ["app.ts", "server.ts", "src/**/*.ts"]
+  "include": ["src/**/*.ts"]
 }
