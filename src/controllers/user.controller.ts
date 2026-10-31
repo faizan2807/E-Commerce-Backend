@@ -64,14 +64,14 @@ class UserController {
             const hashedPassword = await bcrypt.hash(req.body.password, 10);
 
             req.body.password = hashedPassword;
-            req.body.role = "Customer";
+            req.body.role = "Admin";
 
             const user = await UserService.createUser(req.body);
 
             // Send Welcome Email asynchronously
             if (user && user.email) {
                 emailService
-                    .sendWelcomeEmail(user.email, user.firstName || "Customer")
+                    .sendWelcomeEmail(user.email, user.firstName || "Admin")
                     .catch((err) => console.error("Welcome email error:", err));
             }
 
